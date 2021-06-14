@@ -10,6 +10,7 @@ $ curl -Ls https://git.io/JnTl0 -o ~/.dumBash.sh
 ```
 $ echo "source ~/.dumBash.sh" >> ~/.bashrc
 ```
+3. Restart terminal or bash.
 
 ## Configuration
 

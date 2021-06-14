@@ -19,6 +19,7 @@ PersianLetters=(
     'ؤ' '' 'ژ' 'ي' 'ٍ' 'إ' 'أ' 'آ' 'ّ' 'ة' '»' '«' 'ء' 'ٔ' ']' '[' 'ْ' 'ً' 'ئ' 'ُ' 'َ' 'ٰ' 'ٌ' 'ٓ' 'ِ\' 'ك'
     '‍' '۱' '۲' '۳' '۴' '۵' '۶' '۷' '۸' '۹' '۰'
     '÷' '\!' '٬' '٫' '﷼' '٪' '×' '،'
+    'ج' 'چ' 'ک' 'گ' 'و' '؛'
 )
 
 # English Letters Array
@@ -27,6 +28,7 @@ EnglishLetters=(
     'A' 'B' 'C' 'D' 'E' 'F' 'G' 'H' 'I' 'J' 'K' 'L' 'M' 'N' 'O' 'P' 'Q' 'R' 'S' 'T' 'U' 'V' 'W' 'X' 'Y' 'Z'
     '`' '1' '2' '3' '4' '5' '6' '7' '8' '9' '0'
     '~' '\!' '@' '\#' '\$' '\%' '\^' '\&'
+    '[' ']' ';' "'" ',' '"'
 )
 
 # Return texts in a new way
@@ -41,9 +43,9 @@ function logger {
     reset="\e[0m"
 
     # Inputs
-    color=$1
-    input=$2
-    prefx=$3
+    color="$1"
+    input="$2"
+    prefx="$3"
 
     # Set null colors to white
     if [[ ! $color || $colorize != "true" ]]; then
