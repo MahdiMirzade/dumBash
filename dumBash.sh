@@ -102,8 +102,8 @@ function command_not_found_handle {
         if [ $ASK_REPLACE == "true" ]; then
             # logger "red" "bash: $@: command not found, " "nobreak"
             logger "BLUE" "Did you mean ${NEW}? [y/N] " "nobreak"
-            read s
-	    case "${s}" in
+            read ASK
+	    case "${ASK}" in
 		    [Yy][Ee][Ss]|Y|y)
 			    logger "GREEN" "Running: " "nobreak"
 			    logger "" "${NEW}..."
