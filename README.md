@@ -1,7 +1,9 @@
 <p align="center">
     <img src="https://raw.githubusercontent.com/MahdyMirzade/MahdyMirzade/main/assets/dumbash/dumbash_main.png">
 </p>
-😦 Replace your second language characters to English in bash. (Persian)
+<p align="center">
+    😦 Replace your second keyboard layout characters to English in bash. (Persian)
+</p>
 
 ## Installation
 1. Download `dumBash.sh` to `$HOME` directory:
