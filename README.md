@@ -1,4 +1,6 @@
-# dumBash
+<p align="center">
+    <img src="https://raw.githubusercontent.com/MahdyMirzade/MahdyMirzade/main/assets/dumbash/dumbash_main.png">
+</p>
 😦 Replace your second language characters to English in bash. (Persian)
 
 ## Installation
