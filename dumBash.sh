@@ -85,7 +85,7 @@ function command_not_found_handle {
     else
         # Check if we need to ask to replace command
         if [[ $askreplace == "true" ]]; then
-            logger "red" "bash: $@: command not found, " "nobreak"
+            # logger "red" "bash: $@: command not found, " "nobreak"
             logger "blue" "Did you mean $new? [y/N] " "nobreak"
             read
             if [[ $REPLY -eq "y" || $REPLY -eq "Y" || $REPLY -eq "" ]]; then
