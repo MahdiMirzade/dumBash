@@ -2,13 +2,11 @@
 😦 Replace your second language characters to English in bash. (Persian)
 
 ## Installation
-
-Download `dumBash.sh` to `$HOME` directory:
+1. Download `dumBash.sh` to `$HOME` directory:
 ```
 $ curl -Ls https://git.io/JnTl0 -o ~/.dumBash.sh
 ```
-
-Autorun **dumBash** in `.bashrc`:
+2. Autorun **dumBash** in `.bashrc`:
 ```
 $ echo "source ~/.dumBash.sh" >> ~/.bashrc
 ```
@@ -16,10 +14,25 @@ $ echo "source ~/.dumBash.sh" >> ~/.bashrc
 ## Configuration
 
 After installing **dumBash**, you can configure some parameters in `~/.dumBash.sh`:
-| Parameter             | Value                 | Description                                                                           |
-| --- | --- | --- |
-| colorize              | Boolean (true/false)  | If you want colorized output, set this to true                                        |
-| askreplace            | Boolean (true/false)  | If you want to be asked when dumBash wants to replace your command, set this to true  |
+- [Colorize](#colorize)
+- [AskReplace](#askreplace)
+
+### Colorize
+
+![Dumbash](https://raw.githubusercontent.com/MahdyMirzade/MahdyMirzade/main/assets/dumbash/dumbash_colorized.png)
+
+**Type:** Boolean (true/false)
+**Default:** `true`
+**Description:** If you want colorized output, set this to true.
+
+### AskReplace
+
+![Dumbash](https://raw.githubusercontent.com/MahdyMirzade/MahdyMirzade/main/assets/dumbash/dumbash_askreplaced.png)
+
+**Type:** Boolean (true/false)
+**Default:** `true`
+**Description:** If you want to be asked when dumBash wants to replace your command, set this to true.
+
 
 ## Donate
 <a href="https://raw.githubusercontent.com/mahdymirzade/mahdymirzade/main/assets/dotfiles/heart.gif"><img src="https://raw.githubusercontent.com/mahdymirzade/mahdymirzade/main/assets/dotfiles/lq/heart.gif" alt="Donation Gif" width="200" height="193" align="right"></a>
