@@ -6,57 +6,21 @@
 </p>
 
 ## Installation
-1. Download `dumBash.sh` to `$HOME` directory:
+1. Download `dumBash.sh`:
 ```
-$ curl -Ls https://git.io/JnTl0 -o ~/.dumBash.sh
+$ git clone https://github.com/MahdyMirzade/dumBash.git ~/dumBash
+$ cd ~/dumBash/
+$ bash setup.sh
 ```
-2. Autorun **dumBash** in `.bashrc`:
+2. Run `colorize_askreplace.sh` script:
 ```
-$ echo "source ~/.dumBash.sh" >> ~/.bashrc
+$ cd ~/dumBash/
+$ bash colorize_askreplace.sh
 ```
+![photo](Screenshots/dumBash.png)
+<br />
 3. Restart terminal or bash.
 
-## Configuration
-
-After installing **dumBash**, you can configure some parameters in `~/.dumBash.sh`:
-- [Colorize](#colorize)
-- [AskReplace](#askreplace)
-
-### Colorize
-
-![Dumbash](https://raw.githubusercontent.com/MahdyMirzade/MahdyMirzade/main/assets/dumbash/dumbash_colorized.png)
-
-**Type:** Boolean (true/false)
-
-**Default:** `true`
-
-**Description:** If you want colorized output, set this to true.
-
-**Example:**
-```
-~/.dumBash.sh
-=============
-colorized="true"
-colorized="false"
-```
-
-### AskReplace
-
-![Dumbash](https://raw.githubusercontent.com/MahdyMirzade/MahdyMirzade/main/assets/dumbash/dumbash_askreplaced.png)
-
-**Type:** Boolean (true/false)
-
-**Default:** `true`
-
-**Description:** If you want to be asked when dumBash wants to replace your command, set this to true.
-
-**Example:**
-```
-~/.dumBash.sh
-=============
-askreplace="true"
-askreplace="false"
-```
 
 ## Donate
 <a href="https://raw.githubusercontent.com/mahdymirzade/mahdymirzade/main/assets/dotfiles/heart.gif"><img src="https://raw.githubusercontent.com/mahdymirzade/mahdymirzade/main/assets/dotfiles/lq/heart.gif" alt="Donation Gif" width="200" height="193" align="right"></a>
