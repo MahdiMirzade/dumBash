@@ -2,7 +2,7 @@
     <img src="https://raw.githubusercontent.com/MahdyMirzade/MahdyMirzade/main/assets/dumbash/dumbash_main.png">
 </p>
 <p align="center">
-    :iran::keyboard: Replace your second keyboard layout characters to English in bash. (Persian)
+    :iran::keyboard: Replace your second keyboard layout characters to English in **bash** and **zsh**. (Persian)
 </p>
 
 ## Installation
@@ -12,7 +12,7 @@ $ git clone https://github.com/MahdyMirzade/dumBash.git ~/dumBash
 $ cd ~/dumBash
 $ bash setup.sh
 ```
-2. Restart terminal or bash.
+2. Restart terminal or shell.
 
 ## Configuration
 Run `config.sh` script:
