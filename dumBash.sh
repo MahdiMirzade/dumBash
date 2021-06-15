@@ -96,12 +96,13 @@ function command_not_found_handle {
 		    [Yy][Ee][Ss]|Y|y)
 			    logger "GREEN" "Running: " "nobreak"
 			    logger "" "${NEW}..."
-			    $NEW
+			    eval $NEW
 			    if [ "$?" != 0 ];then
 				    return 1
 			    fi
 			    ;;
 		     [Nn][Oo]|N|n)
+		     	    eval $@
 			    return 1
 			    ;;
 		    *)
@@ -110,8 +111,10 @@ function command_not_found_handle {
 	    esac
         else
             logger "YELLOW" "$@ -> $NEW"
-            logger "RED" "bash: $new: command not found"
-	    exit 1
+	    logger "GREEN" "Running: " "nobreak"
+	    logger "" "${NEW}..."
+	    eval $@
+	    return 1
         fi
     fi
 }
