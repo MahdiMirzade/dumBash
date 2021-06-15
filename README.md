@@ -9,18 +9,18 @@
 1. Download `dumBash.sh`:
 ```
 $ git clone https://github.com/MahdyMirzade/dumBash.git ~/dumBash
-$ cd ~/dumBash/
+$ cd ~/dumBash
 $ bash setup.sh
 ```
-2. Run `colorize_askreplace.sh` script:
+2. Restart terminal or bash.
+
+## Configuration
+Run `config.sh` script:
 ```
-$ cd ~/dumBash/
-$ bash colorize_askreplace.sh
+$ cd ~/dumBash
+$ bash config.sh
 ```
 ![photo](Screenshots/dumBash.png)
-<br />
-3. Restart terminal or bash.
-
 
 ## Donate
 <a href="https://raw.githubusercontent.com/mahdymirzade/mahdymirzade/main/assets/dotfiles/heart.gif"><img src="https://raw.githubusercontent.com/mahdymirzade/mahdymirzade/main/assets/dotfiles/lq/heart.gif" alt="Donation Gif" width="200" height="193" align="right"></a>
