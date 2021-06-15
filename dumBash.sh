@@ -48,7 +48,7 @@ function logger {
     # Colors
     WHITE="\e[0;97m"
     BLUE="\e[0;94m"
-    YELlOW="\e[0;93m"
+    YELLOW="\e[0;93m"
     GREEN="\e[0;92m"
     RED="\e[0;91m"
     RESET="\e[0m"
