@@ -98,7 +98,6 @@ function command_not_found_handler () {
 			    fi
 			    ;;
 		     [Nn][Oo]|N|n)
-                            eval $@
 			    return 1
 			    ;;
 		    *)
