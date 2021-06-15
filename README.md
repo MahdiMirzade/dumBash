@@ -2,7 +2,7 @@
     <img src="https://raw.githubusercontent.com/MahdyMirzade/MahdyMirzade/main/assets/dumbash/dumbash_main.png">
 </p>
 <p align="center">
-    :iran::keyboard: Replace your second keyboard layout characters to English in **bash** and **zsh**. (Persian)
+    :iran::keyboard: Replace your second keyboard layout characters to English in <b>bash</b> and <b>zsh</b>. (Persian)
 </p>
 
 ## Installation
