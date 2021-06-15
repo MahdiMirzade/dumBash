@@ -1,15 +1,12 @@
 #!/usr/bin/env bash
 
-# vim: foldmethod=marker 
+# vim: foldmethod=marker
 
-# Configuration {{{
-	
+# Configuration
 COLORIZE="true"
 ASK_REPLACE="true"
 
-# }}}
-
-# Persian Letters Array {{{
+# Persian Letters Array
 PERSIAN_LETTERS=(
     'ش' 'ذ' 'ز' 'ی' 'ث' 'ب' 'ل' 'ا' 'ه' 'ت' 'ن' 'م' 'پ' 'د' 'خ' 'ح' 'ض' 'ق' 'س' 'ف' 'ع' 'ر' 'ص' 'ط' 'غ' 'ظ'
     'ؤ' '\' 'ژ' 'ي' 'ٍ' 'إ' 'أ' 'آ' 'ّ' 'ة' '»' '«' 'ء' 'ٔ' ']' '[' 'ْ' 'ً' 'ئ' 'ُ' 'َ' 'ٰ' 'ٌ' 'ٓ' 'ِ\' 'ك'
@@ -18,9 +15,7 @@ PERSIAN_LETTERS=(
     'ج' 'چ' 'ک' 'گ' 'و' '؛'
 )
 
-# }}}
-
-# English Letters Array{{{
+# English Letters Array
 ENGLISH_LETTERS=(
     'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 'u' 'v' 'w' 'x' 'y' 'z'
     'A' 'B' 'C' 'D' 'E' 'F' 'G' 'H' 'I' 'J' 'K' 'L' 'M' 'N' 'O' 'P' 'Q' 'R' 'S' 'T' 'U' 'V' 'W' 'X' 'Y' 'Z'
@@ -29,10 +24,8 @@ ENGLISH_LETTERS=(
     '[' ']' ';' "'" ',' '"'
 )
 
-# }}}
-
-# Return texts in a new way {{{
-function logger {
+# Return texts in a new way
+function logger () {
 
     # Colors
     WHITE="\e[0;97m"
@@ -51,7 +44,7 @@ function logger {
     if [[ -z  $COLOR || $COLORIZE != "true" ]]; then
         COLOR="WHITE"
     fi
-    
+
     # Customizable "No new line"
     if [[ $PREFX == "nobreak" ]]; then
         ADDON="-en"
@@ -60,19 +53,22 @@ function logger {
     fi
 
     # Return
-    echo $ADDON "${!COLOR}$INPUT${RESET}"
+    if [[ $BASH ]]; then
+        echo $ADDON "${!COLOR}$INPUT${RESET}"
+    elif [[ $ZSH_NAME ]]; then
+        echo $ADDON "${(P)COLOR}$INPUT${RESET}"
+    fi
 }
 
-# }}}
-
-# Handle command not found {{{
-function command_not_found_handle {
+# Handle command not found
+function command_not_found_handler () {
 
     # Copy `input` to `new` variable
     NEW=$@
 
     # Replace $PersianLetters with $EnglishLetters
-    for i in "${!PERSIAN_LETTERS[@]}"; do
+    ARRLEN=${#PERSIAN_LETTERS[@]}
+    for ((i = 0 ; i < $ARRLEN ; i++)); do
         LETTER_FA="${PERSIAN_LETTERS[$i]}"
         LETTER_EN=${ENGLISH_LETTERS[$i]}
         NEW=${NEW//["$LETTER_FA"]/$LETTER_EN}
@@ -88,7 +84,7 @@ function command_not_found_handle {
 	return 1
     else
         # Check if we need to ask to replace command
-        if [ $ASK_REPLACE == "true" ]; then
+        if [[ $ASK_REPLACE == "true" ]]; then
             # logger "red" "bash: $@: command not found, " "nobreak"
             logger "BLUE" "Did you mean ${NEW}? [y/N] " "nobreak"
             read ASK
@@ -96,12 +92,13 @@ function command_not_found_handle {
 		    [Yy][Ee][Ss]|Y|y)
 			    logger "GREEN" "Running: " "nobreak"
 			    logger "" "${NEW}..."
-			    $NEW
+			    eval $NEW
 			    if [ "$?" != 0 ];then
 				    return 1
 			    fi
 			    ;;
 		     [Nn][Oo]|N|n)
+                            eval $@
 			    return 1
 			    ;;
 		    *)
@@ -110,11 +107,15 @@ function command_not_found_handle {
 	    esac
         else
             logger "YELLOW" "$@ -> $NEW"
-            logger "RED" "bash: $new: command not found"
+            logger "GREEN" "Running: " "nobreak"
+            logger "" "${NEW}..."
+            eval $NEW
 	    exit 1
         fi
     fi
 }
 
-# }}}
-
+# Handle command not found - bash function
+function command_not_found_handle () {
+    command_not_found_handler $@
+}

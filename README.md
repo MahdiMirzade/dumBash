@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/MahdyMirzade/MahdyMirzade/main/assets/dumbash/dumbash_main.png" alt="dumBash">
+    <img src="https://raw.githubusercontent.com/MahdyMirzade/MahdyMirzade/main/assets/dumbash/dumbash_main.png">
 </p>
 <p align="center">
     😦 Replace your second keyboard layout characters to English in bash. (Persian)
@@ -20,12 +20,16 @@ Run `config.sh` script:
 $ cd ~/dumBash
 $ bash config.sh
 ```
-![dumBash Configuration](https://raw.githubusercontent.com/MahdyMirzade/MahdyMirzade/main/assets/dumbash/dumbash_config.png)
+![photo](Screenshots/dumBash.png)
 
-## Team
+## Donate
+<a href="https://raw.githubusercontent.com/mahdymirzade/mahdymirzade/main/assets/dotfiles/heart.gif"><img src="https://raw.githubusercontent.com/mahdymirzade/mahdymirzade/main/assets/dotfiles/lq/heart.gif" alt="Donation Gif" width="200" height="193" align="right"></a>
+I put some time on this project and I really don't think it has any values but I would love some cryptocurrencies:
+- **BTC:** `1H5YUVVif9u9JNBVaboCwsBvHAoDeAW5yc`
+- **ETH:** `0x05A11A118eb3BDbD015c2fdd3F843dBe422C2955`
+- **LTC:** `LiZRqXUrQYjs8TapBEpEngiSiZMvViaPhi`
+- **ZEC:** `t1NRoc1a6nXxZT1c1dDCUaMTGGRcpfCBcXy`
 
-This theme is maintained by the following person(s) and a bunch of [awesome contributors](https://github.com/MahdyMirzade/dumBash/graphs/contributors).
+Made with <3 by **Mahdy Mirzade**
 
-| [![Mahdy Mirzade](https://github.com/mahdymirzade.png?size=100)](https://github.com/mahdymirzade) | [![Dark-Rail (Learner)](https://github.com/Dark-Rail.png?size=100)](https://github.com/Dark-Rail)  |
-| --- | --- |
-| [Mahdy Mirzade](https://github.com/mahdymirzade) | [Dark-Rail (Learner)](https://github.com/Dark-Rail) |
+Yell at me: [me@mahdym.ir](mailto:me@mahdym.ir)
