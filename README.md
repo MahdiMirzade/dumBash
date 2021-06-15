@@ -2,7 +2,7 @@
     <img src="https://raw.githubusercontent.com/MahdyMirzade/MahdyMirzade/main/assets/dumbash/dumbash_main.png">
 </p>
 <p align="center">
-    :iran::keyboard: Replace your second keyboard layout characters to English in bash. (Persian)
+    😦 Replace your second keyboard layout characters to English in bash. (Persian)
 </p>
 
 ## Installation
@@ -30,10 +30,6 @@ I put some time on this project and I really don't think it has any values but I
 - **LTC:** `LiZRqXUrQYjs8TapBEpEngiSiZMvViaPhi`
 - **ZEC:** `t1NRoc1a6nXxZT1c1dDCUaMTGGRcpfCBcXy`
 
-<<<<<<< HEAD
 Made with <3 by **Mahdy Mirzade**
-=======
-This project is maintained by the following people and a bunch of [awesome contributors](https://github.com/MahdyMirzade/dumBash/graphs/contributors).
->>>>>>> 17bfb05510a1ce56d1eafa5b304d6b532036d0d5
 
 Yell at me: [me@mahdym.ir](mailto:me@mahdym.ir)
