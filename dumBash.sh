@@ -89,7 +89,7 @@ function command_not_found_handler () {
             logger "BLUE" "Did you mean ${NEW}? [y/N] " "nobreak"
             read ASK
 	    case "${ASK}" in
-		    [Yy][Ee][Ss]|Y|y|درست|صحیح|[غِ][ثٍ][سئ])
+		    [Yy][Ee][Ss]|Y|y|درست|صحیح|[غِ][ثٍ][سئ]|غ|ِ)
 			    logger "GREEN" "Running: " "nobreak"
 			    logger "" "${NEW}..."
 			    eval $NEW
@@ -97,7 +97,7 @@ function command_not_found_handler () {
 				    return 1
 			    fi
 			    ;;
-		     [Nn][Oo]|N|n|[دٔ][هّ]|د|ٔ|خیر|نادرست|غلط)
+		     [Nn][Oo]|N|n|[دٔ][هّ]|د|ٔ|خیر|نادرست|غلط|د|ٔ)
 			    return 1
 			    ;;
 		    *)
