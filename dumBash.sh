@@ -98,7 +98,11 @@ function command_not_found_handler () {
 			    fi
 			    ;;
 		     [Nn][Oo]|N|n)
+<<<<<<< HEAD
                             eval $@
+=======
+		     	    eval $@
+>>>>>>> 17bfb05510a1ce56d1eafa5b304d6b532036d0d5
 			    return 1
 			    ;;
 		    *)
@@ -107,10 +111,17 @@ function command_not_found_handler () {
 	    esac
         else
             logger "YELLOW" "$@ -> $NEW"
+<<<<<<< HEAD
             logger "GREEN" "Running: " "nobreak"
             logger "" "${NEW}..."
             eval $NEW
 	    exit 1
+=======
+	    logger "GREEN" "Running: " "nobreak"
+	    logger "" "${NEW}..."
+	    eval $@
+	    return 1
+>>>>>>> 17bfb05510a1ce56d1eafa5b304d6b532036d0d5
         fi
     fi
 }
