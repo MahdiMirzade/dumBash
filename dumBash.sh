@@ -64,7 +64,7 @@ function logger () {
 function command_not_found_handler () {
 
     # Copy `input` to `new` variable
-    NEW=$@
+    NEW=$*
 
     # Replace $PersianLetters with $EnglishLetters
     ARRLEN=${#PERSIAN_LETTERS[@]}
@@ -75,8 +75,8 @@ function command_not_found_handler () {
     done
 
     # Check the difference between old and new input
-    DIFF_CHECK=$(diff <(printf "%s" "$@" ) <(printf "%s" "$NEW"))
-    # DIFF_CHECK=$(printf "%s %s" "$@" "$NEW" | diff)
+    DIFF_CHECK=$(diff <(printf "%s" "$*" ) <(printf "%s" "$NEW"))
+    # DIFF_CHECK=$(printf "%s %s" "$*" "$NEW" | diff)
 
     # Check if there was any replaces in string
     if [[ -z $DIFF_CHECK ]]; then
@@ -85,7 +85,7 @@ function command_not_found_handler () {
     else
         # Check if we need to ask to replace command
         if [[ $ASK_REPLACE == "true" ]]; then
-            # logger "red" "bash: $@: command not found, " "nobreak"
+            # logger "red" "bash: $*: command not found, " "nobreak"
             logger "BLUE" "Did you mean ${NEW}? [y/N] " "nobreak"
             read ASK
 	    case "${ASK}" in
@@ -105,7 +105,7 @@ function command_not_found_handler () {
 			    ;;
 	    esac
         else
-            logger "YELLOW" "$@ -> $NEW"
+            logger "YELLOW" "$* -> $NEW"
             logger "GREEN" "Running: " "nobreak"
             logger "" "${NEW}..."
             eval $NEW
@@ -116,5 +116,5 @@ function command_not_found_handler () {
 
 # Handle command not found - bash function
 function command_not_found_handle () {
-    command_not_found_handler $@
+    command_not_found_handler $*
 }
