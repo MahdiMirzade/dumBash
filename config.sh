@@ -6,8 +6,11 @@
 OS_TYPE=$(uname -o)
 
 # Current working directory
-CWD="$(pwd)/$(dirname "$0")"
-
+if [[ -n $1 ]]; then
+	WORKING_DIR="$1"
+else
+	WORKING_DIR="${PWD}"
+fi
 # Colorize
 printf "1. %s\n2. %s\n" "Enable Colorize" "Disable Colorize"
 read -p ">>> " COLORIZE_YES_NO
@@ -17,20 +20,20 @@ case "${COLORIZE_YES_NO}" in
     [Ee][Nn][Aa][Bb][Ll][Ee]|1)
 	case "${OS_TYPE}" in
 	    *[Gg][Nn][Uu]/[Ll][Ii][Nn][Uu][Xx]*)
-		sed -i "s,COLORIZE=\"false\",COLORIZE=\"true\", "  $CWD/dumBash.sh
+		sed -i "s,COLORIZE=\"false\",COLORIZE=\"true\", "  ${WORKING_DIR}/dumBash.sh
 	    ;;
 	    *[Ff][Rr][Ee][Bb][Ss][Dd]*)
-		sed -i "" "s,COLORIZE=\"false\",COLORIZE=\"true\", "  $CWD/dumBash.sh
+		sed -i "" "s,COLORIZE=\"false\",COLORIZE=\"true\", "  ${WORKING_DIR}/dumBash.sh
 	    ;;
 	esac
     ;;
     [Dd][Ii][Ss][Aa][Bb][Ll][Ee]|2)
 	case "${OS_TYPE}" in
 	    *[Gg][Nn][Uu]/[Ll][Ii][Nn][Uu][Xx]*)
-		sed -i "s,COLORIZE=\"true\",COLORIZE=\"false\", "  $CWD/dumBash.sh
+		sed -i "s,COLORIZE=\"true\",COLORIZE=\"false\", "  ${WORKING_DIR}/dumBash.sh
 	    ;;
 	    *[Ff][Rr][Ee][Bb][Ss][Dd]*)
-		sed -i "" "s,COLORIZE=\"true\",COLORIZE=\"false\", "  $CWD/dumBash.sh
+		sed -i "" "s,COLORIZE=\"true\",COLORIZE=\"false\", "  ${WORKING_DIR}/dumBash.sh
 	    ;;
 	esac
     ;;
@@ -49,11 +52,11 @@ case "${ASK_REPLACE_YES_NO}" in
     [Ee][Nn][Aa][Bb][Ll][Ee]|1)
 	case "${OS_TYPE}" in
 	    *[Gg][Nn][Uu]/[Ll][Ii][Nn][Uu][Xx]*)
-		sed -i "s,ASK_REPLACE=\"false\",ASK_REPLACE=\"true\", "  $CWD/dumBash/dumBash.sh
+		sed -i "s,ASK_REPLACE=\"false\",ASK_REPLACE=\"true\", "  ${WORKING_DIR}/dumBash.sh
 		exit 0
 	    ;;
 	    *[Ff][Rr][Ee][Bb][Ss][Dd]*)
-		sed -i "" "s,ASK_REPLACE=\"false\",ASK_REPLACE=\"true\", "  $CWD/dumBash.sh
+		sed -i "" "s,ASK_REPLACE=\"false\",ASK_REPLACE=\"true\", "  ${WORKING_DIR}/dumBash.sh
 		exit 0
 	    ;;
 	esac
@@ -61,11 +64,11 @@ case "${ASK_REPLACE_YES_NO}" in
     [Dd][Ii][Ss][Aa][Bb][Ll][Ee]|2)
 	case "${OS_TYPE}" in
 	    *[Gg][Nn][Uu]/[Ll][Ii][Nn][Uu][Xx]*)
-		sed -i "s,ASK_REPLACE=\"true\",ASK_REPLACE=\"false\", "  $CWD/dumBash.sh
+		sed -i "s,ASK_REPLACE=\"true\",ASK_REPLACE=\"false\", "  ${WORKING_DIR}/dumBash.sh
 		exit 0
 	    ;;
 	    *[Ff][Rr][Ee][Bb][Ss][Dd]*)
-		sed -i "" "s,ASK_REPLACE=\"true\",ASK_REPLACE=\"false\", "  $CWD/dumBash.sh
+		sed -i "" "s,ASK_REPLACE=\"true\",ASK_REPLACE=\"false\", "  ${WORKING_DIR}/dumBash.sh
 		exit 0
 	    ;;
         esac
@@ -76,4 +79,4 @@ case "${ASK_REPLACE_YES_NO}" in
     ;;
 esac
 
-unset OS_TYPE  COLORIZE_YES_NO ASK_REPLACE_YES_NO CWD
+unset OS_TYPE  COLORIZE_YES_NO ASK_REPLACE_YES_NO WORKING_DIR
