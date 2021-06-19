@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 # vim: foldmethod=marker
 
@@ -80,7 +80,7 @@ function command_not_found_handler () {
 
     # Check if there was any replaces in string
     if [[ -z $DIFF_CHECK ]]; then
-        logger "RED" "bash: $@: command not found"
+        logger "RED" "bash: $*: command not found"
 	return 1
     else
         # Check if we need to ask to replace command
