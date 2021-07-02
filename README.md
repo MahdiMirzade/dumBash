@@ -26,4 +26,4 @@ $ bash config.sh
 This project is maintained by the following people and a bunch of [awesome contributors](https://github.com/MahdyMirzade/dumBash/graphs/contributors).
 | [![Mahdy Mirzade](https://github.com/mahdymirzade.png?size=100)](https://github.com/mahdymirzade) | [![Dark-Rail (Learner)](https://github.com/Dark-Rail.png?size=100)](https://github.com/Dark-Rail)  |
 | --- | --- |
-| [Mahdy Mirzade](https://github.com/mahdymirzade) | [Dark-Rail (Learner)](https://github.com/Dark-Rail) |
+| [Mahdy Mirzade](https://github.com/mahdymirzade) | [pr-asadi (Pouria Asadi)](https://github.com/pr-asadi) |
