@@ -92,6 +92,11 @@ function command_not_found_handler () {
 		    [Yy][Ee][Ss]|Y|y|[غِ][ثٍ][سئ]|[غِ][سئ]|ص|ب|د|صحیح|بله|درست|یس|غ|ِ)
 			    logger "GREEN" "Running: " "nobreak"
 			    logger "" "${NEW}..."
+			    if [ "${NEW}" == "exit" ]; then
+				    TEMP_VAR="$(ps -p $(ps -p $$ -o ppid=))"
+				    TEMP_VAR="$(printf "%s" "${TEMP_VAR}" | awk 'NR==2 {print $1}')"
+				    kill -s TERM "${TEMP_VAR}"
+			    fi
 			    eval $NEW
 			    if [ "$?" != 0 ];then
 				    return 1
