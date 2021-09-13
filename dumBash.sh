@@ -91,23 +91,40 @@ function command_not_found_handler () {
 	    case "${ASK}" in
 		    [Yy][Ee][Ss]|Y|y|[غِ][ثٍ][سئ]|[غِ][سئ]|ص|ب|د|صحیح|بله|درست|یس|غ|ِ)
 			    logger "GREEN" "Running: " "nobreak"
-			    logger "" "${NEW}..."
+			    logger "" "${NEW}"
 			    if [ "${NEW}" == "exit" ]; then
 				    TEMP_VAR="$(ps -p $(ps -p $$ -o ppid=))"
 				    TEMP_VAR="$(printf "%s" "${TEMP_VAR}" | awk 'NR==2 {print $1}')"
 				    kill -s TERM "${TEMP_VAR}"
 			    fi
 			    eval $NEW
-			    if [ "$?" != 0 ];then
+			    if [ "$?" -ne 0 ];then
 				    return 1
 			    fi
 			    ;;
+
+		    '')
+        		    logger "GREEN" "Running: " "nobreak"
+        		    logger "" "${NEW}"
+        		    if [ "${NEW}" == "exit" ]; then
+                		    TEMP_VAR="$(ps -p $(ps -p $$ -o ppid=))"
+                		    TEMP_VAR="$(printf "%s" "${TEMP_VAR}" | awk 'NR==2 {print $1}')"
+                		    kill -s TERM "${TEMP_VAR}"
+        		    fi
+        		    eval $NEW
+        		    if [ "$?" -ne 0 ]; then
+                		    return 1
+        		    fi
+        		    ;;
+
 		     [Nn][Oo]|N|n)
 			    return 1
 			    ;;
+
 		    *)
 			    return 1
 			    ;;
+
 	    esac
         else
             logger "YELLOW" "$* -> $NEW"
